@@ -20,17 +20,7 @@ public class ClienteService {
     }
 
     @Transactional(readOnly = true)
-    public List<Cliente> findAll(){
-        return repository.findAll();
-    }
-
-    @Transactional(readOnly = true)
-    public Cliente findById(Long id){
-        return repository.findById(id).orElseThrow(() -> new RuntimeException("Faiou"));
-    }
-
-    @Transactional
-    public void deleteById(Long id){
-        repository.deleteById(id);
+    public Cliente findByCpf(String cpf){
+        return repository.findByCpf(cpf);
     }
 }
