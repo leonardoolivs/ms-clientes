@@ -19,19 +19,9 @@ public class ClienteController {
         return service.save(cliente);
     }
 
-    @GetMapping("/{id}")
-    public Cliente findById(@PathVariable("id") Long id){
-        return service.findById(id);
-    }
-
-    @GetMapping
-    public List<Cliente> findAll(){
-        return service.findAll();
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable("id") Long id){
-        service.deleteById(id);
+    @GetMapping("/{cpf}")
+    public Cliente findByCpf(@PathVariable("cpf") String cpf){
+        return service.findByCpf(cpf);
     }
 
 }
